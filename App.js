@@ -6,13 +6,26 @@
  * @flow strict-local
  */
 
-import React from 'react';
+ import * as React from 'react';
+ import { NavigationContainer } from '@react-navigation/native';
+ import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { ResturentDetail } from './components/ResturentDetail';
 import {SearchYourPlace} from './components/SearchYourPlace';
+import { SearchYourResturent } from './components/SearchYourResturent';
 
 const App = () => {
   return (
     <>
-      <SearchYourPlace />
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="SearchYourPlace" component={SearchYourPlace} />
+        <Stack.Screen name="SearchYourResturent" component={SearchYourResturent} />
+        <Stack.Screen name="ResturentDetail" component={ResturentDetail} />
+      </Stack.Navigator>
+    </NavigationContainer>
+      {/* <SearchYourPlace /> */}
+      {/* <SearchYourResturent /> */}
+      {/* <ResturentDetail /> */}
     </>
   );
 };

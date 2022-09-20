@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {TextInput, StyleSheet, View} from 'react-native';
 
-export const SearchBar = () => {
+export const SearchBar = (props) => {
   const [number, onChangeNumber] = React.useState(null);
 
   return (
@@ -10,7 +10,7 @@ export const SearchBar = () => {
         style={styles.input}
         onChangeText={onChangeNumber}
         value={number}
-        placeholder="🔍 useless placeholder"
+        placeholder={props.placeholder}
         keyboardType="numeric"
       />
     </View>
