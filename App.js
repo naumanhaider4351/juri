@@ -23,9 +23,6 @@ const App = () => {
         <Stack.Screen name="ResturentDetail" component={ResturentDetail} />
       </Stack.Navigator>
     </NavigationContainer>
-      {/* <SearchYourPlace /> */}
-      {/* <SearchYourResturent /> */}
-      {/* <ResturentDetail /> */}
     </>
   );
 };
