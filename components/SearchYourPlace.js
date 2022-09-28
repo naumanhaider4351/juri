@@ -5,233 +5,132 @@ import {
   StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
   View,
   Image,
+  TouchableOpacity,
+  FlatList,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-import {Section} from '../components/Section';
 import {SearchBar} from './SearchBar';
 
-export const SearchYourPlace = () => {
-  
+export const SearchYourPlace = props => {
+  const data = [
+    {
+      text:"Posto Auto",
+      image:require('../src/img/place1.jpg')
+    },
+    {
+      text:"Birrenia",
+      image:require('../src/img/place2.jpeg')
+    },
+    {
+      text:"Food Delivery",
+      image:require('../src/img/place3.png')
+    },
+    {
+      text:"Elettricista",
+      image:require('../src/img/place4.jpg')
+    },
+    {
+      text:"Hotel",
+      image:require('../src/img/place1.jpg')
+    },
+    {
+      text:"Noleggio Auto",
+      image:require('../src/img/place2.jpeg')
+    },
+    {
+      text:"Bar",
+      image:require('../src/img/place3.png')
+    },
+    {
+      text:"B&B",
+      image:require('../src/img/place4.jpg')
+    },{
+      text:"Posto Auto",
+      image:require('../src/img/place.png')
+    },
+    {
+      text:"Birrenia",
+      image:require('../src/img/place.png')
+    },
+    {
+      text:"Food Delivery",
+      image:require('../src/img/place.png')
+    },
+    {
+      text:"Elettricista",
+      image:require('../src/img/place.png')
+    },
+    {
+      text:"Hotel",
+      image:require('../src/img/place.png')
+    },
+    {
+      text:"Noleggio Auto",
+      image:require('../src/img/place.png')
+    },
+    {
+      text:"Bar",
+      image:require('../src/img/place.png')
+    },
+    {
+      text:"B&B",
+      image:require('../src/img/place.png')
+    }
+  ]
+
+  const renderItem = ({item}) => {
+    return (
+      <>
+        <View
+          style={{
+            // width: '100%',
+            flex:1,
+            alignItems: 'center',
+            paddingTop: 12,
+            paddingBottom: 12,
+          }}>
+          <TouchableOpacity
+            onPress={() =>
+              props.navigation.navigate('SearchYourResturent')
+            }>
+            <Image style={styles.imageSet} source={item.image} />
+            <Text style={{textAlign: 'center'}}>{item.text}</Text>
+          </TouchableOpacity>
+        </View>
+      </>
+    )
+  }
   return (
     <>
       <SafeAreaView style={{height: '100%', flex: 1, backgroundColor: 'white'}}>
-        <StatusBar
-          backgroundColor={'#f3f3f3'}
-          barStyle={'dark-content'}
-        />
+        <StatusBar backgroundColor={'#f3f3f3'} barStyle={'dark-content'} />
         <SearchBar placeholder="🔍 Di cosa hai bisogno?" />
         <ScrollView
           showsVerticalScrollIndicator={false}
           contentInsetAdjustmentBehavior="automatic"
           style={{height: '100%', flex: 1, backgroundColor: 'white'}}>
-          <View
-            style={{
-              width: '100%',
-              flexDirection: 'row',
-              paddingTop: 12,
-              paddingBottom: 12,
-            }}>
-            <View
-              style={{
-                width: '50%',
-                alignItems: 'center',
-              }}>
-              <Image source={require('../src/img/place.png')} />
-              <Text style={{textAlign: 'center'}}>Posto Auto</Text>
-            </View>
-            <View
-              style={{
-                width: '50%',
-                alignItems: 'center',
-              }}>
-              <Image source={require('../src/img/place.png')} />
-              <Text style={{textAlign: 'center'}}>Birrenia</Text>
-            </View>
-          </View>
-          <View
-            style={{
-              width: '100%',
-              flexDirection: 'row',
-              paddingTop: 12,
-              paddingBottom: 12,
-            }}>
-            <View
-              style={{
-                width: '50%',
-                alignItems: 'center',
-              }}>
-              <Image source={require('../src/img/place.png')} />
-              <Text style={{textAlign: 'center'}}>Food Delivery</Text>
-            </View>
-            <View
-              style={{
-                width: '50%',
-                alignItems: 'center',
-              }}>
-              <Image source={require('../src/img/place.png')} />
-              <Text style={{textAlign: 'center'}}>Elettricista</Text>
-            </View>
-          </View>
-          <View
-            style={{
-              width: '100%',
-              flexDirection: 'row',
-              paddingTop: 12,
-              paddingBottom: 12,
-            }}>
-            <View
-              style={{
-                width: '50%',
-                alignItems: 'center',
-              }}>
-              <Image source={require('../src/img/place.png')} />
-              <Text style={{textAlign: 'center'}}>Hotel</Text>
-            </View>
-            <View
-              style={{
-                width: '50%',
-                alignItems: 'center',
-              }}>
-              <Image source={require('../src/img/place.png')} />
-              <Text style={{textAlign: 'center'}}>Noleggio Auto</Text>
-            </View>
-          </View>
-          <View
-            style={{
-              width: '100%',
-              flexDirection: 'row',
-              paddingTop: 12,
-              paddingBottom: 12,
-            }}>
-            <View
-              style={{
-                width: '50%',
-                alignItems: 'center',
-              }}>
-              <Image source={require('../src/img/place.png')} />
-              <Text style={{textAlign: 'center'}}>Bar</Text>
-            </View>
-            <View
-              style={{
-                width: '50%',
-                alignItems: 'center',
-              }}>
-              <Image source={require('../src/img/place.png')} />
-              <Text style={{textAlign: 'center'}}>B&B</Text>
-            </View>
-          </View>
-          <View
-            style={{
-              width: '100%',
-              flexDirection: 'row',
-              paddingTop: 12,
-              paddingBottom: 12,
-            }}>
-            <View
-              style={{
-                width: '50%',
-                alignItems: 'center',
-              }}>
-              <Image source={require('../src/img/place.png')} />
-              <Text style={{textAlign: 'center'}}>Posto Auto</Text>
-            </View>
-            <View
-              style={{
-                width: '50%',
-                alignItems: 'center',
-              }}>
-              <Image source={require('../src/img/place.png')} />
-              <Text style={{textAlign: 'center'}}>Birrenia</Text>
-            </View>
-          </View>
-          <View
-            style={{
-              width: '100%',
-              flexDirection: 'row',
-              paddingTop: 12,
-              paddingBottom: 12,
-            }}>
-            <View
-              style={{
-                width: '50%',
-                alignItems: 'center',
-              }}>
-              <Image source={require('../src/img/place.png')} />
-              <Text style={{textAlign: 'center'}}>Food Delivery</Text>
-            </View>
-            <View
-              style={{
-                width: '50%',
-                alignItems: 'center',
-              }}>
-              <Image source={require('../src/img/place.png')} />
-              <Text style={{textAlign: 'center'}}>Elettricista</Text>
-            </View>
-          </View>
-          <View
-            style={{
-              width: '100%',
-              flexDirection: 'row',
-              paddingTop: 12,
-              paddingBottom: 12,
-            }}>
-            <View
-              style={{
-                width: '50%',
-                alignItems: 'center',
-              }}>
-              <Image source={require('../src/img/place.png')} />
-              <Text style={{textAlign: 'center'}}>Hotel</Text>
-            </View>
-            <View
-              style={{
-                width: '50%',
-                alignItems: 'center',
-              }}>
-              <Image source={require('../src/img/place.png')} />
-              <Text style={{textAlign: 'center'}}>Noleggio Auto</Text>
-            </View>
-          </View>
-          <View
-            style={{
-              width: '100%',
-              flexDirection: 'row',
-              paddingTop: 12,
-              paddingBottom: 12,
-            }}>
-            <View
-              style={{
-                width: '50%',
-                alignItems: 'center',
-              }}>
-              <Image source={require('../src/img/place.png')} />
-              <Text style={{textAlign: 'center'}}>Bar</Text>
-            </View>
-            <View
-              style={{
-                width: '50%',
-                alignItems: 'center',
-              }}>
-              <Image source={require('../src/img/place.png')} />
-              <Text style={{textAlign: 'center'}}>B&B</Text>
-            </View>
-          </View>
+          <FlatList
+            style={{}}
+            showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
+            numColumns={2}
+            data={data}
+            renderItem={renderItem}
+            />
         </ScrollView>
       </SafeAreaView>
     </>
   );
 };
 
+
+
 const styles = StyleSheet.create({
+  imageSet: {
+    width: 100,
+    height: 100,
+    borderRadius: 4,
+  },
 });

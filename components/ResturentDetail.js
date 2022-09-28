@@ -8,8 +8,17 @@ import {
   useColorScheme,
   View,
   Image,
+  TouchableOpacity,
+  FlatList,
 } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import {Rating, AirbnbRating} from 'react-native-ratings';
+
+// const WATER_IMAGE = require('./water.png')
+
+// const ratingCompleted = (rating) => {
+//   console.log("Rating is: " + rating)
+// }
 
 import {
   Colors,
@@ -21,6 +30,20 @@ import {
 import {SearchBar} from './SearchBar';
 
 export const ResturentDetail = () => {
+
+  const renderItem = ({item}) => {
+    return (
+      <>
+        <TouchableOpacity
+                // onPress={() =>
+                //   props.navigation.navigate('SearchYourResturent')
+                // }
+                >
+                <Image source={require('../src/img/place.png')} style={{width:100, height: 100,}} />
+              </TouchableOpacity>
+      </>
+    )
+  }
   return (
     <>
       <SafeAreaView style={{height: '100%', flex: 1, backgroundColor: 'white'}}>
@@ -34,6 +57,7 @@ export const ResturentDetail = () => {
             style={{
               width: '100%',
               flex: 1,
+              padding: 24,
             }}>
             <View style={styles.listMain}>
               <Image
@@ -41,229 +65,140 @@ export const ResturentDetail = () => {
                 source={require('../src/img/place.png')}
               />
               <View style={{flex: 1}}>
-                <Text style={{fontWeight: 'bold'}}>Birrenia</Text>
-                <Text>Via Indipendenza 1, Milano (MI)</Text>
+                <Text style={{fontWeight: 'bold'}}>Via Roma 42, Roma (RM)</Text>
+                <AirbnbRating
+                  reviews={[]}
+                  reviewSize={0}
+                  size={12}
+                  count="5"
+                  // selectedColor=""
+                  // unSelectedColor={""}
+                  tintColor="red"
+                  ratingBackgroundColor="red"
+                  ratingTextColor="red"
+                  ratingCount={1}
+                  ratingContainerStyle="none"
+                  startingValue={0}
+                  ratingColor={"red"}
+                  type="bell"
+                  reviewColor="red"
+                  // starContainerStyle={{justifyContent: 'flex-start',alignItems: 'flex-start',}}
+                  ratingContainerStyle={{justifyContent: 'flex-start',alignItems: 'flex-start',marginTop: -21, marginBottom: -2,}}
+                />
+                <Text style={{color: 'skyblue'}}>Ordina</Text>
               </View>
             </View>
-            <View style={styles.listMain}>
-              <Image
-                style={styles.imageSet}
-                source={require('../src/img/place.png')}
-              />
-              <View style={{flex: 1}}>
-                <View style={styles.resturentName}>
-                  <Text style={{fontWeight: 'bold'}}>Birrenia</Text>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                    }}>
-                    <Text style={{textAlign: 'center'}}>Visualizza</Text>
-                    <MaterialIcons name="chevron-right" size={20} />
-                  </View>
-                </View>
-                <Text>Via Indipendenza 1, Milano (MI)</Text>
-              </View>
+            <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin nec orci id mattis. Praesent leo neque, faucibus ac elementum quis, eleifend sed ex.</Text>
+            
+            <FlatList
+            style={styles.flatListStyle}
+              data={[
+                '../src/img/place.png','../src/img/place.png','../src/img/place.png','../src/img/place.png'
+              ]}
+              renderItem={renderItem}
+            />
+            
+            <View
+            style={{
+              width: '100%',
+              flexDirection: 'row',
+              paddingTop: 12,
+              paddingBottom: 12,
+            }}>
+            <View
+              style={{
+                flex: 1,
+                padding: 8,
+                alignItems: 'center',
+              }}>
+              <TouchableOpacity
+                // onPress={() =>
+                //   props.navigation.navigate('SearchYourResturent')
+                // }
+                >
+                <Image source={require('../src/img/place.png')} style={{width:100, height: 100,}} />
+              </TouchableOpacity>
             </View>
-            <View style={styles.listMain}>
-              <Image
-                style={styles.imageSet}
-                source={require('../src/img/place.png')}
-              />
-              <View style={{flex: 1}}>
-                <View style={styles.resturentName}>
-                  <Text style={{fontWeight: 'bold'}}>Birrenia</Text>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                    }}>
-                    <Text style={{textAlign: 'center'}}>Visualizza</Text>
-                    <MaterialIcons name="chevron-right" size={20} />
-                  </View>
-                </View>
-                <Text>Via Indipendenza 1, Milano (MI)</Text>
-              </View>
+            <View
+              style={{
+                flex: 1,
+                padding: 8,
+                alignItems: 'center',
+              }}>
+              <TouchableOpacity
+                // onPress={() =>
+                //   props.navigation.navigate('SearchYourResturent')
+                // }
+                >
+                <Image source={require('../src/img/place.png')} style={{width:100, height: 100,}} />
+              </TouchableOpacity>
             </View>
-            <View style={styles.listMain}>
-              <Image
-                style={styles.imageSet}
-                source={require('../src/img/place.png')}
-              />
-              <View style={{flex: 1}}>
-                <View style={styles.resturentName}>
-                  <Text style={{fontWeight: 'bold'}}>Birrenia</Text>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                    }}>
-                    <Text style={{textAlign: 'center'}}>Visualizza</Text>
-                    <MaterialIcons name="chevron-right" size={20} />
-                  </View>
-                </View>
-                <Text>Via Indipendenza 1, Milano (MI)</Text>
-              </View>
+            <View
+              style={{
+                flex: 1,
+                padding: 8,
+                alignItems: 'center',
+              }}>
+              <TouchableOpacity
+                // onPress={() =>
+                //   props.navigation.navigate('SearchYourResturent')
+                // }
+                >
+                <Image source={require('../src/img/place.png')} style={{width:100, height: 100,}} />
+              </TouchableOpacity>
             </View>
-            <View style={styles.listMain}>
-              <Image
-                style={styles.imageSet}
-                source={require('../src/img/place.png')}
-              />
-              <View style={{flex: 1}}>
-                <View style={styles.resturentName}>
-                  <Text style={{fontWeight: 'bold'}}>Birrenia</Text>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                    }}>
-                    <Text style={{textAlign: 'center'}}>Visualizza</Text>
-                    <MaterialIcons name="chevron-right" size={20} />
-                  </View>
-                </View>
-                <Text>Via Indipendenza 1, Milano (MI)</Text>
-              </View>
             </View>
-            <View style={styles.listMain}>
-              <Image
-                style={styles.imageSet}
-                source={require('../src/img/place.png')}
-              />
-              <View style={{flex: 1}}>
-                <View style={styles.resturentName}>
-                  <Text style={{fontWeight: 'bold'}}>Birrenia</Text>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                    }}>
-                    <Text style={{textAlign: 'center'}}>Visualizza</Text>
-                    <MaterialIcons name="chevron-right" size={20} />
-                  </View>
-                </View>
-                <Text>Via Indipendenza 1, Milano (MI)</Text>
-              </View>
+
+
+            <View
+            style={{
+              width: '100%',
+              flexDirection: 'row',
+              paddingTop: 12,
+              paddingBottom: 12,
+            }}>
+            <View
+              style={{
+                flex: 1,
+                padding: 8,
+                alignItems: 'center',
+              }}>
+              <TouchableOpacity
+                // onPress={() =>
+                //   props.navigation.navigate('SearchYourResturent')
+                // }
+                >
+                <Image source={require('../src/img/place.png')} style={{width:100, height: 100,}} />
+              </TouchableOpacity>
             </View>
-            <View style={styles.listMain}>
-              <Image
-                style={styles.imageSet}
-                source={require('../src/img/place.png')}
-              />
-              <View style={{flex: 1}}>
-                <View style={styles.resturentName}>
-                  <Text style={{fontWeight: 'bold'}}>Birrenia</Text>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                    }}>
-                    <Text style={{textAlign: 'center'}}>Visualizza</Text>
-                    <MaterialIcons name="chevron-right" size={20} />
-                  </View>
-                </View>
-                <Text>Via Indipendenza 1, Milano (MI)</Text>
-              </View>
+            <View
+              style={{
+                flex: 1,
+                padding: 8,
+                alignItems: 'center',
+              }}>
+              <TouchableOpacity
+                // onPress={() =>
+                //   props.navigation.navigate('SearchYourResturent')
+                // }
+                >
+                <Image source={require('../src/img/place.png')} style={{width:100, height: 100,}} />
+              </TouchableOpacity>
             </View>
-            <View style={styles.listMain}>
-              <Image
-                style={styles.imageSet}
-                source={require('../src/img/place.png')}
-              />
-              <View style={{flex: 1}}>
-                <View style={styles.resturentName}>
-                  <Text style={{fontWeight: 'bold'}}>Birrenia</Text>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                    }}>
-                    <Text style={{textAlign: 'center'}}>Visualizza</Text>
-                    <MaterialIcons name="chevron-right" size={20} />
-                  </View>
-                </View>
-                <Text>Via Indipendenza 1, Milano (MI)</Text>
-              </View>
+            <View
+              style={{
+                flex: 1,
+                padding: 8,
+                alignItems: 'center',
+              }}>
+              <TouchableOpacity
+                // onPress={() =>
+                //   props.navigation.navigate('SearchYourResturent')
+                // }
+                >
+                <Image source={require('../src/img/place.png')} style={{width:100, height: 100,}} />
+              </TouchableOpacity>
             </View>
-            <View style={styles.listMain}>
-              <Image
-                style={styles.imageSet}
-                source={require('../src/img/place.png')}
-              />
-              <View style={{flex: 1}}>
-                <View style={styles.resturentName}>
-                  <Text style={{fontWeight: 'bold'}}>Birrenia</Text>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                    }}>
-                    <Text style={{textAlign: 'center'}}>Visualizza</Text>
-                    <MaterialIcons name="chevron-right" size={20} />
-                  </View>
-                </View>
-                <Text>Via Indipendenza 1, Milano (MI)</Text>
-              </View>
-            </View>
-            <View style={styles.listMain}>
-              <Image
-                style={styles.imageSet}
-                source={require('../src/img/place.png')}
-              />
-              <View style={{flex: 1}}>
-                <View style={styles.resturentName}>
-                  <Text style={{fontWeight: 'bold'}}>Birrenia</Text>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                    }}>
-                    <Text style={{textAlign: 'center'}}>Visualizza</Text>
-                    <MaterialIcons name="chevron-right" size={20} />
-                  </View>
-                </View>
-                <Text>Via Indipendenza 1, Milano (MI)</Text>
-              </View>
-            </View>
-            <View style={styles.listMain}>
-              <Image
-                style={styles.imageSet}
-                source={require('../src/img/place.png')}
-              />
-              <View style={{flex: 1}}>
-                <View style={styles.resturentName}>
-                  <Text style={{fontWeight: 'bold'}}>Birrenia</Text>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                    }}>
-                    <Text style={{textAlign: 'center'}}>Visualizza</Text>
-                    <MaterialIcons name="chevron-right" size={20} />
-                  </View>
-                </View>
-                <Text>Via Indipendenza 1, Milano (MI)</Text>
-              </View>
-            </View>
-            <View style={styles.listMain}>
-              <Image
-                style={styles.imageSet}
-                source={require('../src/img/place.png')}
-              />
-              <View style={{flex: 1}}>
-                <View style={styles.resturentName}>
-                  <Text style={{fontWeight: 'bold'}}>Birrenia</Text>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                    }}>
-                    <Text style={{textAlign: 'center'}}>Visualizza</Text>
-                    <MaterialIcons name="chevron-right" size={20} />
-                  </View>
-                </View>
-                <Text>Via Indipendenza 1, Milano (MI)</Text>
-              </View>
             </View>
           </View>
         </ScrollView>
@@ -277,14 +212,7 @@ const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 24,
-    borderBottomWidth: 1,
-    borderBottomColor: 'lightgrey',
-  },
-  resturentName: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    marginBottom: 12,
   },
   imageSet: {
     width: 50,
@@ -292,4 +220,10 @@ const styles = StyleSheet.create({
     borderRadius: 1000,
     marginRight: 12,
   },
+  flatListStyle: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    paddingTop: 40
+  }
 });
