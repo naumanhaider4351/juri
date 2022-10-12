@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -6,16 +6,17 @@ import {
   StyleSheet,
   Text,
   View,
-  Image,
   TouchableOpacity,
   FlatList,
   TextInput,
 } from 'react-native';
+import CheckBox from '@react-native-community/checkbox';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Header} from './Header';
 import {TimeAndDatePicker} from './TimeAndDatePicker';
 
-export const Checkout = () => {
+export const Checkout = (props) => {
+  const [isSelected, setSelection] = useState(false);
   const data = [
     {
       heading: 'Birra 1',
@@ -37,7 +38,7 @@ export const Checkout = () => {
         <View style={styles.listMain}>
           <TouchableOpacity
             style={styles.resturentList}
-            onPress={() => props.navigation.navigate('Calendar')}>
+            onPress={() => props.navigation.navigate('Confirmation')}>
             <View style={{flex: 1}}>
               <View style={styles.resturentName}>
                 <Text
@@ -92,11 +93,14 @@ export const Checkout = () => {
             renderItem={renderItem}
           />
           <View style={styles.pagamento}>
-            <Text style={{fontSize: 16, marginBottom: 3,color: '#080904',}}>
+            <Text style={{fontSize: 16, marginBottom: 3, color: '#080904'}}>
               Dati di pagamento
             </Text>
             <TextInput
-              style={[styles.nominativoInput, {flex: 1, width: '100%',marginBottom: 5}]}
+              style={[
+                styles.nominativoInput,
+                {flex: 1, width: '100%', marginBottom: 5},
+              ]}
               placeholder="Nomiro Carta"
             />
             <View style={styles.calendarFooterMain}>
@@ -116,9 +120,41 @@ export const Checkout = () => {
                 <TimeAndDatePicker mode="date" />
               </View>
             </View>
-            <Text style={{fontSize: 16, marginBottom: 3, color: '#080904',}}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat blandit auctor. Cras in pretium justo, et elementum eros. Aliquam erat volutpat. Donec in nisi nisi. Proin ultrices porta fermentum. Etiam egestas metus leo, vitae interdum libero finibus eu. Cras egestas elementum eros sit amet tincidunt. Sed congue egestas placerat. Suspendisse nisi nulla, rutrum sed eleifend a, fermentum sed magna. Vestibulum odio enim, aliquet id volutpat pellentesque, laoreet ac risus. Cras ac interdum lectus. Integer quis ornare elit.
+            <Text style={{fontSize: 16, marginBottom: 3, color: '#080904'}}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+              placerat blandit auctor. Cras in pretium justo, et elementum eros.
+              Aliquam erat volutpat. Donec in nisi nisi. Proin ultrices porta
+              fermentum. Etiam egestas metus leo, vitae interdum libero finibus
+              eu. Cras egestas elementum eros sit amet tincidunt. Sed congue
+              egestas placerat. Suspendisse nisi nulla, rutrum sed eleifend a,
+              fermentum sed magna. Vestibulum odio enim, aliquet id volutpat
+              pellentesque, laoreet ac risus. Cras ac interdum lectus. Integer
+              quis ornare elit.
             </Text>
+            <View style={styles.checkboxContainer}>
+              <CheckBox
+                value={isSelected}
+                onValueChange={setSelection}
+                style={styles.checkbox}
+              />
+              <Text style={styles.label}>Accetto i Temini e Condizioni</Text>
+            </View>
+            <View style={styles.resturentName}>
+              <Text
+                style={{
+                  fontSize: 25,
+                  fontWeight: 'bold',
+                }}>
+                Totale
+              </Text>
+              <Text
+                style={{
+                  fontSize: 25,
+                  fontWeight: 'bold',
+                }}>
+                €35.00
+              </Text>
+            </View>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -182,5 +218,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#EBEBEB',
     paddingHorizontal: 5,
     paddingVertical: 8,
+  },
+  checkboxContainer: {
+    flexDirection: 'row',
+    marginBottom: 20,
+  },
+  checkbox: {
+    alignSelf: 'center',
+  },
+  label: {
+    margin: 8,
   },
 });

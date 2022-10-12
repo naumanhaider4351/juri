@@ -48,35 +48,35 @@ export const SearchYourPlace = props => {
       image:require('../src/img/place4.jpg')
     },{
       text:"Posto Auto",
-      image:require('../src/img/place.png')
+      image:require('../src/img/place1.jpg')
     },
     {
       text:"Birrenia",
-      image:require('../src/img/place.png')
+      image:require('../src/img/place2.jpeg')
     },
     {
       text:"Food Delivery",
-      image:require('../src/img/place.png')
+      image:require('../src/img/place3.png')
     },
     {
       text:"Elettricista",
-      image:require('../src/img/place.png')
+      image:require('../src/img/place4.jpg')
     },
     {
       text:"Hotel",
-      image:require('../src/img/place.png')
+      image:require('../src/img/place1.jpg')
     },
     {
       text:"Noleggio Auto",
-      image:require('../src/img/place.png')
+      image:require('../src/img/place2.jpeg')
     },
     {
       text:"Bar",
-      image:require('../src/img/place.png')
+      image:require('../src/img/place3.png')
     },
     {
       text:"B&B",
-      image:require('../src/img/place.png')
+      image:require('../src/img/place4.jpg')
     }
   ]
 

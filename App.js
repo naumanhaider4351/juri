@@ -18,6 +18,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Foundation from 'react-native-vector-icons/Foundation';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { Checkout } from './components/Checkout';
+import { ConfirmationScreen } from './components/ConfirmationScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -36,6 +37,7 @@ const App = () => {
             component={SearchYourResturent}
           />
           <Stack.Screen name="Checkout" component={Checkout} />
+          <Stack.Screen name="Confirmation" component={ConfirmationScreen} />
           <Stack.Screen name="Profile">
             {props => <MyTabs {...props} />}
           </Stack.Screen>

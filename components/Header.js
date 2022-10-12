@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         color: 'skyblue',
     },
     fontSize16: {
-        fontSize: 18,
+        fontSize: 15,
         fontWeight: 'bold',
     },
     minWidth33per: {

@@ -42,7 +42,7 @@ export const Profile = (props) => {
             <View style={styles.listMain}>
               <Image
                 style={styles.imageSet}
-                source={require('../src/img/place.png')}
+                source={require('../src/img/place1.jpg')}
               />
               <View style={{flex: 1}}>
                 <Text style={{fontWeight: 'bold'}}>Via Roma 42, Roma (RM)</Text>
@@ -112,7 +112,7 @@ export const Profile = (props) => {
                   image:require('../src/img/place4.jpg')
                 },
                 {
-                  image:require('../src/img/place.png')
+                  image:require('../src/img/place1.jpg')
                 }
               ]}
               renderItem={renderItem}

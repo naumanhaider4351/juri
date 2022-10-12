@@ -5,28 +5,12 @@ import {
   StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
   View,
   Image,
   TouchableOpacity,
   FlatList,
 } from 'react-native';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import {Rating, AirbnbRating} from 'react-native-ratings';
-
-// const WATER_IMAGE = require('./water.png')
-
-// const ratingCompleted = (rating) => {
-//   console.log("Rating is: " + rating)
-// }
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {AirbnbRating} from 'react-native-ratings';
 import {SearchBar} from './SearchBar';
 
 export const ResturentDetail = () => {

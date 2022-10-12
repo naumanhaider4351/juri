@@ -69,19 +69,19 @@ export const SearchYourResturent = props => {
       heading:"Birrenia",
       text:"Via Indipendenza 1, Milano (MI)",
       iconText:"Visualizza",
-      image:require('../src/img/place.png')
+      image:require('../src/img/place1.jpg')
     },
     {
       heading:"Birrenia",
       text:"Via Indipendenza 1, Milano (MI)",
       iconText:"Visualizza",
-      image:require('../src/img/place.png')
+      image:require('../src/img/place2.jpeg')
     },
     {
       heading:"Birrenia",
       text:"Via Indipendenza 1, Milano (MI)",
       iconText:"Visualizza",
-      image:require('../src/img/place.png')
+      image:require('../src/img/place3.png')
     },
   ]
 
