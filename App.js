@@ -19,6 +19,7 @@ import Foundation from 'react-native-vector-icons/Foundation';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { Checkout } from './components/Checkout';
 import { ConfirmationScreen } from './components/ConfirmationScreen';
+import { MapViewLayout } from './components/MapView';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -31,6 +32,7 @@ const App = () => {
           screenOptions={{
             headerShown: false,
           }}>
+          <Stack.Screen name="MapViewLayout" component={MapViewLayout} />
           <Stack.Screen name="SearchYourPlace" component={SearchYourPlace} />
           <Stack.Screen
             name="SearchYourResturent"
