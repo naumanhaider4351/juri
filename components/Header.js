@@ -8,10 +8,10 @@ import {
 export const Header = (props) => {
   return (
     <>
-        <View style={styles.headerMain}>
-            <Text style={[styles.colorSkyblue, styles.fontSize16, styles.minWidth33per]}>{props.leftText}</Text>
-            <Text style={[styles.fontSize16, styles.minWidth33per, styles.textCenter]}>{props.middleText}</Text>
-            <Text style={[styles.colorSkyblue, styles.fontSize16, styles.minWidth33per, styles.textRight]}>{props.rightText}</Text>
+        <View style={[styles.headerMain, {backgroundColor: props.backgroundColor}]}>
+            <Text style={[{color:props.color}, styles.fontSize16, styles.minWidth33per]}>{props.leftText}</Text>
+            <Text style={[{color:props.color}, styles.fontSize16, styles.minWidth33per, styles.textCenter]}>{props.middleText}</Text>
+            <Text style={[{color:props.color}, styles.fontSize16, styles.minWidth33per, styles.textRight]}>{props.rightText}</Text>
         </View>
     </>
   )
@@ -19,14 +19,10 @@ export const Header = (props) => {
 
 const styles = StyleSheet.create({
     headerMain: {
-        backgroundColor: '#f3f3f3',
         paddingHorizontal: 14,
         paddingVertical: 10,
         flexDirection: 'row',
         justifyContent: 'space-between',
-    },
-    colorSkyblue: {
-        color: 'skyblue',
     },
     fontSize16: {
         fontSize: 15,

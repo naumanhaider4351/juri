@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import {
   SafeAreaView,
   ScrollView,
@@ -13,12 +13,19 @@ import {
 import {AirbnbRating} from 'react-native-ratings';
 import { Header } from './Header';
 
-export const Profile = (props) => {
+export const Profile = ({navigation,route}) => {
+  // const [resturantProdDetail,setResturantProdDetails]= useState(route.params.products || [])
+  useEffect(()=>{
+    // const {item}= route.params
+    console.log(route)
+// console.log(route.params.item)
+  },[])
+  // console.log(resturantProdDetail)
 
   const renderItem = ({item}) => {
     return (
       <>
-        <TouchableOpacity onPress={() => props.navigation.navigate('Menu') } style={{width:'33%',padding:5,}}>
+        <TouchableOpacity onPress={() => navigation.navigate('Menu') } style={{width:'33%',padding:5,}}>
           <Image source={item.image} style={{width:'100%', }} height={110} resizeMode='cover' />
         </TouchableOpacity>
       </>
@@ -27,8 +34,8 @@ export const Profile = (props) => {
   return (
     <>
       <SafeAreaView style={{height: '100%', flex: 1, backgroundColor: 'white'}}>
-        <StatusBar backgroundColor={'#f3f3f3'} barStyle={'dark-content'} />
-        <Header leftText="Indietro" middleText="Birreria" />
+        <StatusBar backgroundColor={'#F43731'} barStyle={'light-content'} />
+        <Header backgroundColor='#F43731' color='#fff' leftText="Indietro" middleText="Birreria" />
         <ScrollView
           showsVerticalScrollIndicator={false}
           contentInsetAdjustmentBehavior="automatic"
@@ -65,7 +72,7 @@ export const Profile = (props) => {
                   // starContainerStyle={{justifyContent: 'flex-start',alignItems: 'flex-start',}}
                   ratingContainerStyle={{justifyContent: 'flex-start',alignItems: 'flex-start',marginTop: -21, marginBottom: -2,}}
                 />
-                <Text style={{color: 'skyblue'}}>Ordina</Text>
+                <Text style={{color: '#F43731'}}>Ordina</Text>
               </View>
             </View>
             <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin nec orci id mattis. Praesent leo neque, faucibus ac elementum quis, eleifend sed ex.</Text>

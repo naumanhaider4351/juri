@@ -97,7 +97,7 @@ export const Menu = (props) => {
                         alignItems: 'center',
                       }}>
                       <Text style={{marginRight: 8,fontSize:20,}}>{item.iconText}</Text>
-                      <Ionicons name="information-circle-outline" size={30} color="skyblue" />
+                      <Ionicons name="information-circle-outline" size={30} color="#F43731" />
                     </View>
                   </View>
                 </View>
@@ -109,8 +109,8 @@ export const Menu = (props) => {
   return (
     <>
       <SafeAreaView style={{height: '100%', flex: 1, backgroundColor: 'white'}}>
-        <StatusBar backgroundColor={'#f3f3f3'} barStyle={'dark-content'} />
-        <Header leftText="Indietro" middleText="Menu" />
+        <StatusBar backgroundColor={'#F43731'} barStyle={'light-content'} />
+        <Header backgroundColor='#F43731' color='#fff' leftText="Indietro" middleText="Menu" />
         <ScrollView
           showsVerticalScrollIndicator={false}
           contentInsetAdjustmentBehavior="automatic"

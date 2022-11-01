@@ -1,13 +1,21 @@
 import React from 'react';
 import {
-    StyleSheet,
-    View,
-  } from 'react-native';
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  FlatList,
+} from 'react-native';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 
 export const MapViewLayout = (props) => {
   return (
     <>
+    <StatusBar backgroundColor={'transparent'} barStyle={'dark-content'} />
       <View style={styles.container}>
         <MapView
           provider={PROVIDER_GOOGLE}

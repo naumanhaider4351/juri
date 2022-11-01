@@ -16,8 +16,8 @@ export const ConfirmationScreen = () => {
   return (
     <>
       <SafeAreaView style={{height: '100%', flex: 1, backgroundColor: 'white'}}>
-        <StatusBar backgroundColor={'#f3f3f3'} barStyle={'dark-content'} />
-        <Header leftText="Indietro" middleText="Checkout" />
+        <StatusBar backgroundColor={'#F43731'} barStyle={'light-content'} />
+        <Header backgroundColor='#F43731' color='#fff' leftText="Indietro" middleText="Checkout" />
           <View style={styles.confirmationMain}>
             <Image
               source={require('../src/img/confirmationCheck.png')}

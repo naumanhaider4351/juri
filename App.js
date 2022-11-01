@@ -61,6 +61,8 @@ function MyTabs() {
         // tabBarStyle: { backgroundColor: Colors.lightRoyalBlue,borderTopColor:Colors.trasparent, height: Platform.OS === 'ios' ? 75 : 60, },
         tabBarStyle: {height: 60, backgroundColor: '#F7F5F6'},
         tabBarLabelStyle: {marginBottom: 5},
+        tabBarActiveTintColor: '#F43731',
+        tabBarInactiveTintColor: 'gray',
       }}>
       <Tab.Screen
         name="Profile"
@@ -72,7 +74,7 @@ function MyTabs() {
             <Foundation
               name="torsos-male-female"
               size={30}
-              color={focused ? '#3371E0' : ''}
+              color={focused ? '#F43731' : ''}
               style={{marginTop: 8}}
             />
           ),
@@ -86,9 +88,9 @@ function MyTabs() {
           tabBarLabel: 'Menu',
           tabBarIcon: ({focused}) => (
             <FontAwesome
-              name="file-text-o"
+              name="file-text"
               size={25}
-              color={focused ? '#3371E0' : ''}
+              color={focused ? '#F43731' : ''}
               style={{marginTop: 8}}
             />
           ),
@@ -102,9 +104,9 @@ function MyTabs() {
           tabBarLabel: 'Prenota',
           tabBarIcon: ({focused}) => (
             <FontAwesome
-              name="star-o"
+              name="star"
               size={25}
-              color={focused ? '#3371E0' : ''}
+              color={focused ? '#F43731' : ''}
               style={{marginTop: 8}}
             />
           ),

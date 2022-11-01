@@ -89,8 +89,8 @@ export const CalendarScreen = props => {
   return (
     <>
       <SafeAreaView style={{height: '100%', flex: 1, backgroundColor: 'white'}}>
-        <StatusBar backgroundColor={'#f3f3f3'} barStyle={'dark-content'} />
-        <Header leftText="Indietro" middleText="Prenota" rightText="Prenota" />
+        <StatusBar backgroundColor={'#F43731'} barStyle={'light-content'} />
+        <Header backgroundColor='#F43731' color='#fff' leftText="Indietro" middleText="Prenota" rightText="Prenota" />
         <ScrollView>
           <Calendar
             // Initially visible month. Default = now

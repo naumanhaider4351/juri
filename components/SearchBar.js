@@ -19,7 +19,8 @@ export const SearchBar = (props) => {
 
 const styles = StyleSheet.create({
     SearchBarMain: {
-        backgroundColor: "lightgrey",
+        backgroundColor: "#F43731",
+        elevation: 8,
     },
   input: {
     height: 40,
